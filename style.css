@@ -229,7 +229,7 @@ transform: rotate(90deg);
 }
 
 .ui.modal {
-max-width: 350px;
+max-width: 450px;
 background-color: #fff;
 border-radius: 8px;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -347,3 +347,13 @@ opacity: 1;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow effect */
     transform: translateX(-1%); /* Slight movement to the left */
 }
+
+.ui.bottom.modal {
+    position: fixed;
+    bottom: -100%; /* Start outside the viewport */
+    transition: bottom 0.5s ease; /* Smooth slide-up effect */
+  }
+
+  .ui.bottom.modal.visible {
+    bottom: 0; /* Slide into view */
+  }

@@ -294,7 +294,9 @@ $(".homeMenuContent").on("click", function () {
     $("#fundCalculator").css("display", "");
     $(".homeContainer").css("display", "none");
     setUpMenuForUis('fundCalculator');
-}
+  }else if(conType == "Reports"){
+    $('.ui.bottom.modal').modal('show');
+  }
 });
 
 $("#homeIcon").on("click", function () {

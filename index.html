@@ -44,10 +44,10 @@
                     <div class="homeMenu" style="padding: 20px 10px;">
                         <div class="homeMenuContent" data-val="fundCalculator">Fund Manager</div>
                         <div class="homeMenuContent" data-val="Reports">Reports</div>
-                        <!-- <div class="homeMenuContent">Mark calculator</div>
+                        <div class="homeMenuContent">Mark calculator</div>
                         <div class="homeMenuContent">Content Storage</div>
                         <div class="homeMenuContent">Fund Devider</div>
-                        <div class="homeMenuContent">More</div> -->
+                        <div class="homeMenuContent">More</div>
                     </div>
                 </div>
         </div>
@@ -69,7 +69,7 @@
     </div>
     
 
-    <div class="ui modal" id="menuModal">
+    <div class="ui modal" id="menuModal" style="width:350px;">
         <div class="header" style="display:flex;justify-content: space-between;">Menu <div id="closeMenu" style="color:red;font-size: 1.2rem;font-weight: bold;cursor: pointer;width: 25px;height: 25px;border-radius: 4px;background-color: #eee;display: flex;justify-content: center;align-items: center;">X</div></div>
         <div class="content">
             <div class="ui list">
@@ -87,6 +87,18 @@
             </div>
         </div>
     </div>
+
+    <div class="ui bottom modal" style="width:420px;">
+        <!-- <div class="" style="padding: 10px 15px 10px 10px;"><div style="display: flex;justify-content:end;color:red;width:100%;">X</div></div> -->
+        <div class="content">
+            <div class="ui list">
+                <div class="item menuItems " style="display: flex;padding:0 0 0 5px;" id="selectAll"><<i class="sticky note outline icon"></i><span style="margin-left: 4px;">Fund Manager Report</span></div>
+                <div class="item menuItems " style="display: flex;padding:0 0 0 5px;" id="unselectAll"><i class="rupee sign icon"></i><span style="margin-left: 4px;">Total Money Report</span></div>
+                <div class="item menuItems " style="display: flex;padding:0 0 0 5px;" id="clearAll"><i class="chart bar outline icon"></i><span style="margin-left: 4px;">Storage Report</span></div>
+                <div class="item menuItems " style="display: flex;padding:0 0 0 5px;" id="clearAll"><i class="chart pie icon"></i><span style="margin-left: 4px;">Daywise Report</span></div>
+            </div>
+        </div>
+      </div>
 
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
