@@ -1,0 +1,96 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyCalc</title>
+    <link rel="icon" href="https://media.istockphoto.com/id/1466681725/vector/calculator-with-indian-rupee-sign-icon-on-blue-background-flat-design-with-long-shadow.jpg?s=1024x1024&w=is&k=20&c=6AFoJz2W_q2xsxfWiWJwdmTNDh9oawyFlF1-yqIh0gY=" type="image/png"> <!-- Set the icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <div class="top-nav" style="padding: 10px 20px;">
+       <div style="width: 120px; height: 40px;">
+        <img src="applogo4.png" alt="" style="width: 100%; height: 100%;">
+     </div>
+    </div>
+
+    <div class="ui segment" >
+        <div class="container" id="fundCalculator" style="padding: 30 0 0 0;display:none;">
+            <div class="headcon">
+                <div class="ui input" style="flex: 2;">
+                    <input type="text" placeholder="Enter content" id="contentbox">
+                </div>
+                <div class="ui input" style="flex: 1; display: flex; align-items: center;">
+                    <input type="number" placeholder="Amount" id="contentamount">
+                    <button class="ui blue icon button" id="addval" title="Add Item">
+                        <i class="plus icon"></i>
+                    </button>
+                </div>
+                <div class="inline field" style="margin-top: 5px;">
+                    <div class="subTotalLabel" id="subTotalAmountLabel">
+                        SubTotal: 0
+                    </div>
+                </div>
+            </div>
+
+            <div class="bodycon" style="padding: 0 0 50px 0;"></div>
+        </div>
+        <div class="homeContainer" style="margin-top:40px;">
+            
+                <div class="homeHeading" >
+                    <h2 style="color: #4B4376;" id="greeting"></h2>
+                    <h4 style="color: #AE445A;padding:2px 2px 2px 10px;">What do you want to do ?</h4>
+                </div>
+                <div class="homeBody" style="margin-top: 8px;">
+                    <div class="homeMenu" style="padding: 20px 10px;">
+                        <div class="homeMenuContent" data-val="fundCalculator">Fund Manager</div>
+                        <div class="homeMenuContent">Reports</div>
+                        <div class="homeMenuContent">Mark calculator</div>
+                        <div class="homeMenuContent">Content Storage</div>
+                        <div class="homeMenuContent">Fund Devider</div>
+                        <div class="homeMenuContent">More</div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <div class="icon-container">
+            <i class="home icon" id="homeIcon" style="font-size: 1.5rem;"></i>
+        </div>
+        <div class="icon-container">
+            <i class="question circle outline icon" id="helpIcon" style="font-size: 1.5rem;"></i>
+        </div>
+        <div class="icon-container">
+            <i class="calculator icon" id="calculatorIcon" style="font-size: 1.5rem;"></i>
+        </div>
+        <div class="icon-container">
+            <i class="bars icon" id="menuIcon" style="font-size: 1.5rem;"></i>
+        </div>
+    </div>
+    
+
+    <div class="ui modal" id="menuModal">
+        <div class="header" style="display:flex;justify-content: space-between;">Menu <div id="closeMenu" style="color:red;font-size: 1.2rem;font-weight: bold;cursor: pointer;width: 25px;height: 25px;border-radius: 4px;background-color: #eee;display: flex;justify-content: center;align-items: center;">X</div></div>
+        <div class="content">
+            <div class="ui list">
+                <div class="item menuItems fundCalcMenus" style="display: flex;padding:0 0 0 5px;" id="selectAll"><i class="hand point up outline icon"></i><span style="margin-left: 4px;">Select All</span></div>
+                <div class="item menuItems fundCalcMenus" style="display: flex;padding:0 0 0 5px;" id="unselectAll"><i class="hand point down outline icon"></i><span style="margin-left: 4px;">UnSelect All</span></div>
+                <div class="item menuItems fundCalcMenus" style="display: flex;padding:0 0 0 5px;" id="clearAll"><i class="fire icon"></i><span style="margin-left: 4px;">Clear All</span></div>
+                <div class="item menuItems fundCalcMenus" style="display: flex;padding:0 0 0 5px;" id="undoFundManager"><i class="undo icon"></i>
+                    <span style="margin-left: 4px;">Undo</span></div>
+                <div class="item menuItems fundCalcMenus" style="display: flex;padding:0 0 0 5px;" id="settings"><i class="cog icon"></i><span style="margin-left: 4px;">Settings</span></div>
+
+
+                <div class="item menuItems homeMenus" style="display: flex;padding:0 0 0 5px;" id="darkMode"><i class="moon outline icon"></i><span style="margin-left: 4px;">Dark Mode</span></div>
+                <div class="item menuItems homeMenus" style="display: flex;padding:0 0 0 5px;" id="lightMode"><i class="sun icon"></i><span style="margin-left: 4px;">light Mode</span></div>
+                <div class="item menuItems homeMenus" style="display: flex;padding:0 0 0 5px;" id="settings"><i class="cog icon"></i><span style="margin-left: 4px;">Settings</span></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
