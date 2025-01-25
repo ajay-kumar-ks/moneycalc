@@ -357,3 +357,47 @@ opacity: 1;
   .ui.bottom.modal.visible {
     bottom: 0; /* Slide into view */
   }
+  .greetingtxt{
+    color: #4B4376;
+  }
+  .subHeadingTxt{
+    color: #AE445A;
+  }
+
+
+  /* dark modeeeeeee */
+
+  .darkMode-body{
+    background-color: #243642;
+  }
+  .darkMode-headNav{
+    background-color: #387478;
+  }
+  .darkMode-appBody{
+    background-color: #2A3335;
+  }
+  .darkMode-text1{
+    color: #F5F7F8;
+  }
+  .darkMode-text2{
+    color: #FF8225;
+  }
+  .darkMode-text3{
+    color: #387478;
+  }
+
+  .darkMode-homeMenu{
+    box-shadow: 1px 1px 5px #3F3F44;
+    border-color: #224649;
+  }
+
+  .darkMode-homeMenu:hover{
+    background-color: #243642;
+  }
+  .darkMode-borromNav{
+    background-color: #222831;
+  }
+
+  .darkMode-inputs{
+    background-color: #222831;
+  }
