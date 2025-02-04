@@ -124,7 +124,7 @@ $(document).ready(function () {
     $.each(arrEle, function (index, val) {
       var regex = new RegExp(searchQuery.replace(/%/g, ".*"), "i");
       if (regex.test(val.name) || searchQuery === "") {
-        htmlContent += `<div class="bodycard" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;padding:15px;background-color:#f4f4f4;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+        htmlContent += `<div class="bodycard bodycard-darkMode" style="background-color:#27445D;">
                     <div style="flex: 1; text-align:center; display:flex; justify-content:center; align-items:center;">
                         <div class="checkbox-wrapper-18">
                             <div class="round">
@@ -143,7 +143,7 @@ $(document).ready(function () {
                           val.id
                         }" type="number" class="inputAmount" placeholder="AMT" value="${
           val.amount
-        }" style="font-size:16px;height:40px;">
+        }" style="font-size:16px;height:40px;background-color: #393E46;color:#eee;">
                         <button class="ui icon red button deleteElement" data-id="${
                           val.id
                         }" style="height:40px;width:40px;font-size:16px;">
@@ -153,17 +153,17 @@ $(document).ready(function () {
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <button class="ui icon button plusminus" data-id="${
                           val.id
-                        }" data-val="minus" style="height:40px;width:40px;font-size:16px;">
+                        }" data-val="minus" style="height:40px;width:40px;font-size:16px;background-color:rgb(38, 45, 56);color:#eee;">
                             <i class="minus icon"></i>
                         </button>
                         <div class="ui input" style="width: 70px;">
                             <input type="number" readonly placeholder="Qty" class="itemqty" value="${
                               val.qty
-                            }" style="font-size:16px;height:40px;text-align:center;">
+                            }" style="font-size:16px;height:40px;text-align:center;background-color: #393E46;color:#eee;">
                         </div>
                         <button class="ui icon button plusminus" data-id="${
                           val.id
-                        }" data-val="plus" style="height:40px;width:40px;font-size:16px;">
+                        }" data-val="plus" style="height:40px;width:40px;font-size:16px;background-color: rgb(38, 45, 56);color:#eee;">
                             <i class="plus icon"></i>
                         </button>
                         <div class="ui input" style="flex: 1; min-width: 100px;">
@@ -171,7 +171,7 @@ $(document).ready(function () {
                               val.amount
                             }" placeholder="Total" value="${
           val.totalamt
-        }" style="font-size:16px;height:40px;">
+        }" style="font-size:16px;height:40px;background-color: #393E46;color:#eee;">
                         </div>
                     </div>
                 </div>`;

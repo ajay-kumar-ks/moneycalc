@@ -364,6 +364,17 @@ opacity: 1;
     color: #AE445A;
   }
 
+  .bodycard{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:10px;
+    padding:15px;
+    background-color:#f4f4f4;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  }
+
 
   /* dark modeeeeeee */
 
@@ -400,4 +411,7 @@ opacity: 1;
 
   .darkMode-inputs{
     background-color: #222831;
+  }
+  .bodycard-darkMode{
+    background-color:#27445D;
   }
