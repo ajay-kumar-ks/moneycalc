@@ -415,3 +415,7 @@ opacity: 1;
   .bodycard-darkMode{
     background-color:#27445D;
   }
+
+  #subTotalAmountLabel{
+    color: #EFB036;
+  }
