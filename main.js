@@ -121,6 +121,13 @@ $(document).ready(function () {
 
   function showContent() {
     var htmlContent = "";
+    arrEle.sort((a, b) => {
+      if (a.checked !== b.checked) {
+          return b.checked - a.checked; 
+      }
+      return b.id - a.id;
+    });
+  
     $.each(arrEle, function (index, val) {
       var regex = new RegExp(searchQuery.replace(/%/g, ".*"), "i");
       if (regex.test(val.name) || searchQuery === "") {
@@ -181,7 +188,6 @@ $(document).ready(function () {
   }
   $(document).on("change", ".itemSelected", function () {
     var idval = $(this).attr("data-id");
-    console.log("hhh", idval);
     var check = 0;
     if ($(this).prop("checked")) {
       check = 1;
@@ -269,6 +275,22 @@ $(document).ready(function () {
         $("#menuModal").modal("hide");
     }
   });
+  $("#qtyToOne").on("click", function () {
+    if (arrEle.length > 0) {
+      arrEleTemp = arrEle;
+    $.each(arrEle, function (index, value) {
+      value.qty = 1;
+    });
+    updateLocalStorage();
+    SetSubTotalAmount();
+    showContent();
+    $('#menuModal').modal('hide')
+  }
+  });
+
+  $('#darkMode').on('click',function(){
+    funSwitchToDarkMode();
+  });
 });
 
 function greeting() {
@@ -313,4 +335,8 @@ function setUpMenuForUis(currentUi){
         $('.fundCalcMenus').css('display','flex')
         $('.homeMenus').css('display','none')
     }
+}
+
+function funSwitchToDarkMode(){
+  $('body').removeClass('darkMode-body');
 }
