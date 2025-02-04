@@ -124,7 +124,7 @@ $(document).ready(function () {
     $.each(arrEle, function (index, val) {
       var regex = new RegExp(searchQuery.replace(/%/g, ".*"), "i");
       if (regex.test(val.name) || searchQuery === "") {
-        htmlContent += `<div class="bodycard bodycard-darkMode" style="background-color:#27445D;">
+        htmlContent += `<div class="bodycard bodycard-darkMode" style="background-color:#243642;">
                     <div style="flex: 1; text-align:center; display:flex; justify-content:center; align-items:center;">
                         <div class="checkbox-wrapper-18">
                             <div class="round">
@@ -136,7 +136,7 @@ $(document).ready(function () {
                                 <label for="checkbox-${val.id}"></label>
                             </div>
                         </div>
-                        <h3>${val.name}</h3>
+                        <h3 style="color:#eee">${val.name}</h3>
                     </div>
                     <div class="ui input" style="flex: 1; min-width: 100px;">
                         <input data-id="${
@@ -153,7 +153,7 @@ $(document).ready(function () {
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <button class="ui icon button plusminus" data-id="${
                           val.id
-                        }" data-val="minus" style="height:40px;width:40px;font-size:16px;background-color:rgb(38, 45, 56);color:#eee;">
+                        }" data-val="minus" style="height:40px;width:40px;font-size:16px;background-color:#2A3335;color:#eee;">
                             <i class="minus icon"></i>
                         </button>
                         <div class="ui input" style="width: 70px;">
@@ -163,7 +163,7 @@ $(document).ready(function () {
                         </div>
                         <button class="ui icon button plusminus" data-id="${
                           val.id
-                        }" data-val="plus" style="height:40px;width:40px;font-size:16px;background-color: rgb(38, 45, 56);color:#eee;">
+                        }" data-val="plus" style="height:40px;width:40px;font-size:16px;background-color:#2A3335;color:#eee;">
                             <i class="plus icon"></i>
                         </button>
                         <div class="ui input" style="flex: 1; min-width: 100px;">
