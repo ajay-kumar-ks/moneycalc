@@ -287,13 +287,15 @@ $(document).ready(function () {
     showContent();
     $('#menuModal').modal('hide')
   }
-  });
+});
 
-  $('#darkMode').on('click',function(){
-    funSwitchToDarkMode();
-  });
-  $('#lightMode').on('click',function(){
-    funSwitchToLightMode();
+$('#darkMode').on('click',function(){
+  funSwitchToDarkMode();
+  $('#menuModal').modal('hide')
+});
+$('#lightMode').on('click',function(){
+  funSwitchToLightMode();
+  $('#menuModal').modal('hide')
   });
 });
 
