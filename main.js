@@ -10,19 +10,7 @@ $(document).ready(function () {
   // Load existing data from localStorage
   if (localStorage.getItem("moneyCalcData")) {
     arrEle = JSON.parse(localStorage.getItem("moneyCalcData"));
-    arrsomeMainData = JSON.parse(localStorage.getItem("someMainDatas")) || {};
-
-    console.log('dattaaaa',arrsomeMainData)
-    if (!localStorage.getItem("someMainDatas")) {
-        updateLocalStorageMainDatas('appTheme', 'dark');
-        funSwitchToDarkMode();
-    } else {
-        if (arrsomeMainData.appTheme === 'dark') {
-            funSwitchToDarkMode();
-        } else {
-            funSwitchToLightMode();
-        }
-    }
+    setAppTheam();
     showContent();
     SetSubTotalAmount();
   }
@@ -201,6 +189,7 @@ $(document).ready(function () {
       }
     });
     $(".bodycon").html(htmlContent);
+    setAppTheam();
   }
   $(document).on("change", ".itemSelected", function () {
     var idval = $(this).attr("data-id");
@@ -401,5 +390,20 @@ function updateLocalStorageMainDatas(type, datas) {
 
   updatedData[type] = datas;
   localStorage.setItem("someMainDatas", JSON.stringify(updatedData));
+}
+
+function setAppTheam(){
+  arrsomeMainData = JSON.parse(localStorage.getItem("someMainDatas")) || {};
+
+  if (!localStorage.getItem("someMainDatas")) {
+      updateLocalStorageMainDatas('appTheme', 'dark');
+      funSwitchToDarkMode();
+  } else {
+      if (arrsomeMainData.appTheme === 'dark') {
+          funSwitchToDarkMode();
+      } else {
+          funSwitchToLightMode();
+      }
+  }
 }
 
