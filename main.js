@@ -1,6 +1,8 @@
 var arrEle = [];
 var arrEleTemp = [];
 var searchQuery = "";
+let arrsomeMainData = {};
+
 
 $(document).ready(function () {
   greeting();
@@ -8,6 +10,19 @@ $(document).ready(function () {
   // Load existing data from localStorage
   if (localStorage.getItem("moneyCalcData")) {
     arrEle = JSON.parse(localStorage.getItem("moneyCalcData"));
+    arrsomeMainData = JSON.parse(localStorage.getItem("someMainDatas")) || {};
+
+    console.log('dattaaaa',arrsomeMainData)
+    if (!localStorage.getItem("someMainDatas")) {
+        updateLocalStorageMainDatas('appTheme', 'dark');
+        funSwitchToDarkMode();
+    } else {
+        if (arrsomeMainData.appTheme === 'dark') {
+            funSwitchToDarkMode();
+        } else {
+            funSwitchToLightMode();
+        }
+    }
     showContent();
     SetSubTotalAmount();
   }
@@ -28,7 +43,7 @@ $(document).ready(function () {
           checked: 1,
         };
         arrEle.push(val);
-        updateLocalStorage(); // Save changes to localStorage
+        updateLocalStorage(); 
         searchQuery = "";
         showContent();
         SetSubTotalAmount();
@@ -118,6 +133,7 @@ $(document).ready(function () {
   function updateLocalStorage() {
     localStorage.setItem("moneyCalcData", JSON.stringify(arrEle));
   }
+
 
   function showContent() {
     var htmlContent = "";
@@ -356,6 +372,8 @@ function funSwitchToDarkMode(){
   
   $('input').addClass('inputBoxes-darkMode');
   $('.plusminus').addClass('plusMinusBtn-darkMode');
+
+  updateLocalStorageMainDatas('appTheme','dark');
 }
 function funSwitchToLightMode(){
   $('body').removeClass('darkMode-body');
@@ -370,4 +388,18 @@ function funSwitchToLightMode(){
   
   $('input').removeClass('inputBoxes-darkMode');
   $('.plusminus').removeClass('plusMinusBtn-darkMode');
+
+  updateLocalStorageMainDatas('appTheme','light');
 }
+
+function updateLocalStorageMainDatas(type, datas) {
+  let updatedData = JSON.parse(localStorage.getItem("someMainDatas"));
+
+  if (!updatedData || typeof updatedData !== 'object' || Array.isArray(updatedData)) {
+      updatedData = {};  
+  }
+
+  updatedData[type] = datas;
+  localStorage.setItem("someMainDatas", JSON.stringify(updatedData));
+}
+
