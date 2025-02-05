@@ -131,7 +131,7 @@ $(document).ready(function () {
     $.each(arrEle, function (index, val) {
       var regex = new RegExp(searchQuery.replace(/%/g, ".*"), "i");
       if (regex.test(val.name) || searchQuery === "") {
-        htmlContent += `<div class="bodycard bodycard-darkMode" style="background-color:#243642;">
+        htmlContent += `<div class="bodycard bodycard-darkMode" >
                     <div style="flex: 1; text-align:center; display:flex; justify-content:center; align-items:center;">
                         <div class="checkbox-wrapper-18">
                             <div class="round">
@@ -148,9 +148,9 @@ $(document).ready(function () {
                     <div class="ui input" style="flex: 1; min-width: 100px;">
                         <input data-id="${
                           val.id
-                        }" type="number" class="inputAmount" placeholder="AMT" value="${
+                        }" type="number" class="inputAmount inputBoxes-darkMode" placeholder="AMT" value="${
           val.amount
-        }" style="font-size:16px;height:40px;background-color: #393E46;color:#eee;">
+        }" style="font-size:16px;height:40px;">
                         <button class="ui icon red button deleteElement" data-id="${
                           val.id
                         }" style="height:40px;width:40px;font-size:16px;">
@@ -158,27 +158,27 @@ $(document).ready(function () {
                         </button>
                     </div>
                     <div style="display: flex; align-items: center; gap: 10px;">
-                        <button class="ui icon button plusminus" data-id="${
+                        <button class="ui icon button plusminus plusMinusBtn-darkMode" data-id="${
                           val.id
-                        }" data-val="minus" style="height:40px;width:40px;font-size:16px;background-color:#2A3335;color:#eee;">
+                        }" data-val="minus" style="height:40px;width:40px;font-size:16px;">
                             <i class="minus icon"></i>
                         </button>
                         <div class="ui input" style="width: 70px;">
-                            <input type="number" readonly placeholder="Qty" class="itemqty" value="${
+                            <input type="number" readonly placeholder="Qty" class="itemqty inputBoxes-darkMode" value="${
                               val.qty
-                            }" style="font-size:16px;height:40px;text-align:center;background-color: #393E46;color:#eee;">
+                            }" style="font-size:16px;height:40px;text-align:center;">
                         </div>
-                        <button class="ui icon button plusminus" data-id="${
+                        <button class="ui icon button plusminus plusMinusBtn-darkMode" data-id="${
                           val.id
-                        }" data-val="plus" style="height:40px;width:40px;font-size:16px;background-color:#2A3335;color:#eee;">
+                        }" data-val="plus" style="height:40px;width:40px;font-size:16px;">
                             <i class="plus icon"></i>
                         </button>
                         <div class="ui input" style="flex: 1; min-width: 100px;">
-                            <input type="number" readonly class="totalAmount" data-amount="${
+                            <input type="number" readonly class="totalAmount inputBoxes-darkMode" data-amount="${
                               val.amount
                             }" placeholder="Total" value="${
           val.totalamt
-        }" style="font-size:16px;height:40px;background-color: #393E46;color:#eee;">
+        }" style="font-size:16px;height:40px;">
                         </div>
                     </div>
                 </div>`;
@@ -280,6 +280,7 @@ $(document).ready(function () {
       arrEleTemp = arrEle;
     $.each(arrEle, function (index, value) {
       value.qty = 1;
+      value.totalamt = value.amount;
     });
     updateLocalStorage();
     SetSubTotalAmount();
@@ -290,6 +291,9 @@ $(document).ready(function () {
 
   $('#darkMode').on('click',function(){
     funSwitchToDarkMode();
+  });
+  $('#lightMode').on('click',function(){
+    funSwitchToLightMode();
   });
 });
 
@@ -338,5 +342,30 @@ function setUpMenuForUis(currentUi){
 }
 
 function funSwitchToDarkMode(){
+  $('body').addClass('darkMode-body');
+  $('.top-nav').addClass('darkMode-headNav');
+  $('.appBody').addClass('darkMode-appBody');
+  $('.homeMenuContent,.bottom-nav').addClass('darkMode-text1');
+  $('.homeMenuContent').addClass('darkMode-homeMenu');
+  $('.bottom-nav').addClass('darkMode-borromNav');
+  $('.greetingtxt').addClass('darkMode-text2');
+  $('.subHeadingTxt').addClass('darkMode-text3');
+  $('.bodycard').addClass('bodycard-darkMode');
+  
+  $('input').addClass('inputBoxes-darkMode');
+  $('.plusminus').addClass('plusMinusBtn-darkMode');
+}
+function funSwitchToLightMode(){
   $('body').removeClass('darkMode-body');
+  $('.top-nav').removeClass('darkMode-headNav');
+  $('.appBody').removeClass('darkMode-appBody');
+  $('.homeMenuContent,.bottom-nav').removeClass('darkMode-text1');
+  $('.bottom-nav').removeClass('darkMode-borromNav');
+  $('.homeMenuContent').removeClass('darkMode-homeMenu');
+  $('.greetingtxt').removeClass('darkMode-text2');
+  $('.subHeadingTxt').removeClass('darkMode-text3');
+  $('.bodycard').removeClass('bodycard-darkMode');
+  
+  $('input').removeClass('inputBoxes-darkMode');
+  $('.plusminus').removeClass('plusMinusBtn-darkMode');
 }
