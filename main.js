@@ -362,6 +362,9 @@ function funSwitchToDarkMode(){
   $('input').addClass('inputBoxes-darkMode');
   $('.plusminus').addClass('plusMinusBtn-darkMode');
 
+  $('.menuHeader').addClass('menuHed-darkMode');
+  $('.menuContent').addClass('menuCon-darkmode');
+
   updateLocalStorageMainDatas('appTheme','dark');
 }
 function funSwitchToLightMode(){
@@ -377,6 +380,9 @@ function funSwitchToLightMode(){
   
   $('input').removeClass('inputBoxes-darkMode');
   $('.plusminus').removeClass('plusMinusBtn-darkMode');
+
+  $('.menuHeader').removeClass('menuHed-darkMode');
+  $('.menuContent').removeClass('menuCon-darkmode');
 
   updateLocalStorageMainDatas('appTheme','light');
 }

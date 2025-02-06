@@ -431,3 +431,11 @@ opacity: 1;
     background-color:#2A3335 !important;
     color:#eee !important;
   }
+  .menuCon-darkmode{
+    background-color: #161616 !important;
+    color:aliceblue !important;
+  }
+  .menuHed-darkMode{
+    background-color: #20211f !important;
+    color:#eee !important;
+  }
