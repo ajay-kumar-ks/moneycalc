@@ -73,6 +73,7 @@
         <div class="header menuHeader menuHed-darkMode" style="display:flex;justify-content: space-between;">Menu <div id="closeMenu" style="color:red;font-size: 1.2rem;font-weight: bold;cursor: pointer;width: 25px;height: 25px;border-radius: 4px;background-color: #eee;display: flex;justify-content: center;align-items: center;">X</div></div>
         <div class="content menuContent menuCon-darkmode" style="">
             <div class="ui list">
+                <div class="item menuItems fundCalcMenus" style="display: flex;padding:0 0 0 5px;" id="SaveData"><i class="hand point up outline icon"></i><span style="margin-left: 4px;">Save</span></div>
                 <div class="item menuItems fundCalcMenus" style="display: flex;padding:0 0 0 5px;" id="selectAll"><i class="hand point up outline icon"></i><span style="margin-left: 4px;">Select All</span></div>
                 <div class="item menuItems fundCalcMenus" style="display: flex;padding:0 0 0 5px;" id="unselectAll"><i class="hand point down outline icon"></i><span style="margin-left: 4px;">UnSelect All</span></div>
                 <div class="item menuItems fundCalcMenus" style="display: flex;padding:0 0 0 5px;" id="clearAll"><i class="fire icon"></i><span style="margin-left: 4px;">Clear All</span></div>
@@ -93,11 +94,46 @@
         <!-- <div class="" style="padding: 10px 15px 10px 10px;"><div style="display: flex;justify-content:end;color:red;width:100%;">X</div></div> -->
         <div class="content">
             <div class="ui list">
-                <div class="item menuItems " style="display: flex;padding:0 0 0 5px;" id=""><i class="sticky note outline icon"></i><span style="margin-left: 4px;">Fund Manager Report</span></div>
-                <div class="item menuItems " style="display: flex;padding:0 0 0 5px;" id=""><i class="rupee sign icon"></i><span style="margin-left: 4px;">Total Money Report</span></div>
-                <div class="item menuItems " style="display: flex;padding:0 0 0 5px;" id=""><i class="chart bar outline icon"></i><span style="margin-left: 4px;">Storage Report</span></div>
-                <div class="item menuItems " style="display: flex;padding:0 0 0 5px;" id=""><i class="chart pie icon"></i><span style="margin-left: 4px;">Daily Report</span></div>
+                <div class="item menuItems reportsDatas" data-val="fundManagerReports" id="" style="display: flex;padding:0 0 0 5px;" id=""><i class="sticky note outline icon"></i><span style="margin-left: 4px;">Fund Manager Report</span></div>
+                <div class="item menuItems reportsDatas" style="display: flex;padding:0 0 0 5px;" id=""><i class="rupee sign icon"></i><span style="margin-left: 4px;">Total Money Report</span></div>
+                <div class="item menuItems reportsDatas" style="display: flex;padding:0 0 0 5px;" id=""><i class="chart bar outline icon"></i><span style="margin-left: 4px;">Storage Report</span></div>
+                <div class="item menuItems reportsDatas" style="display: flex;padding:0 0 0 5px;" id=""><i class="chart pie icon"></i><span style="margin-left: 4px;">Daily Report</span></div>
             </div>
+        </div>
+      </div>
+
+      <div class="ui modal" id="ReportsModalModal" style="width:90%;height:90vh;">
+        <div class="reportHeader" style="width:100%;display:flex;justify-content:end;color:red;padding:2px 7px;">
+            <div id="closeReportsModal" style="color:red;font-size: 1.2rem;font-weight: bold;cursor: pointer;width: 25px;height: 25px;border-radius: 4px;background-color: #eee;display: flex;justify-content: center;align-items: center;">X</div>
+        </div>
+        <div class="reportContentHere">
+           <div class="fundmanagerReportContainer" style="padding:5px 20px;">
+               <h3 style="margin-left:3px;">Fund Manager Report</h3>
+               <table class="ui celled table" style="margin-top:4px;">
+                <thead>
+                  <tr><th>Content</th>
+                  <th>Qty</th>
+                  <th>Amount</th>
+                </tr></thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Name">James</td>
+                    <td data-label="Age">24</td>
+                    <td data-label="Job">1000</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Name">Jill</td>
+                    <td data-label="Age">26</td>
+                    <td data-label="Job">1000</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Name">Elyse</td>
+                    <td data-label="Age">24</td>
+                    <td data-label="Job">200</td>
+                  </tr>
+                </tbody>
+              </table>
+           </div>
         </div>
       </div>
 

@@ -413,3 +413,22 @@ function setAppTheam(){
   }
 }
 
+$('#SaveData').on('click',function(){
+  if (arrEle.length > 0) {
+    localStorage.setItem("savedFundsData", JSON.stringify(arrEle));
+  }
+});
+$('.reportsDatas').on('click',function(){
+  var reportType = $(this).attr('data-val');
+  console.log('hii1',reportType)
+  if(reportType == 'fundManagerReports'){
+    console.log('hii2')
+    loadFundManagerReports();
+  }
+});
+function loadFundManagerReports(){
+  console.log('hii3')
+  $('#ReportsModalModal').modal('show');
+
+}
+
