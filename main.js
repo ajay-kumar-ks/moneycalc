@@ -427,11 +427,9 @@ $('.reportsDatas').on('click',function(){
   }
 });
 function loadFundManagerReports(){
-  console.log('hii3')
   $('#ReportsModalModal').modal('show');
-  
 }
-$('.reportsDatas').on('click',function(){
-  $('#closeReportsModal').modal('hide');
+$('#loseReportsModal1').on('click',function(){
+  $('#ReportsModalModal').modal('hide');
 });
 
