@@ -413,23 +413,61 @@ function setAppTheam(){
   }
 }
 
-$('#SaveData').on('click',function(){
+$('#SaveData').on('click', function() {
   if (arrEle.length > 0) {
-    localStorage.setItem("savedFundsData", JSON.stringify(arrEle));
+    let saveAllItems = [];
+    if (localStorage.getItem("savedFundsData") && localStorage.getItem("savedFundsData") != '') {
+      saveAllItems = JSON.parse(localStorage.getItem("savedFundsData"));
+    }
+    let AdditionalDatas = {};
+    let TotAmount = 0;
+    arrEle.forEach(element => {
+      TotAmount += Number(element.totalamt);
+    });
+    AdditionalDatas['array'] = arrEle;
+    AdditionalDatas['saveDate'] = new Date().toLocaleString(); // Save date as readable string
+    AdditionalDatas['totitems'] = arrEle.length;
+    AdditionalDatas['totAmt'] = TotAmount;
+    saveAllItems.push(AdditionalDatas); // Corrected this line
+    localStorage.setItem("savedFundsData", JSON.stringify(saveAllItems));
   }
 });
+
+
 $('.reportsDatas').on('click',function(){
   var reportType = $(this).attr('data-val');
   console.log('hii1',reportType)
   if(reportType == 'fundManagerReports'){
-    console.log('hii2')
     loadFundManagerReports();
   }
 });
 function loadFundManagerReports(){
+  console.log('hiii');
+  if (localStorage.getItem("savedFundsData")){
+    console.log('hhhhh',JSON.parse(localStorage.getItem("savedFundsData")))
+    savedAllItems = JSON.parse(localStorage.getItem("savedFundsData"));
+    if(savedAllItems){
+      htmlCon = '';
+      $.each(savedAllItems, function (svIndex, svValue) { 
+         htmlCon += `<div class="fundShowCard" data-id="${svIndex}">
+                   <p style="font-size:1.2rem;color:#7886C7;">${svValue.saveDate}</p>
+                   <div style="display:flex;justify-content:space-between;">
+                       <p style="font-size:1.2rem;">Total Items : ${svValue.totitems}</p>
+                       <p style="font-size:1.2rem;">Total Amount : <b>&#x20B9;&nbsp;${svValue.totAmt}</b></p>
+                   </div> 
+                </div>`;
+      });
+      $('.fundMngFunds').html(htmlCon);
+    }
+  }
   $('#ReportsModalModal').modal('show');
 }
-$('#loseReportsModal1').on('click',function(){
+$('#closeReportsModal1').on('click',function(){
   $('#ReportsModalModal').modal('hide');
+});
+
+$('.fundShowCard').on('click',function(){
+    $('.fundMngFunds').css('display','none');
+    $('.fundmanagerReportContainer').css('display','');
 });
 

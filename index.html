@@ -103,33 +103,40 @@
       </div>
 
       <div class="ui modal" id="ReportsModalModal" style="width:95%;height:90vh;">
-        <div class="reportHeader" style="width:100%;display:flex;justify-content:end;color:red;padding:7px 7px;">
+        <div class="reportHeader" style="width:100%;display:flex;justify-content:space-between;padding:20px 7px;">
+            <h3 style="margin-left:5px;">Fund Manager Report</h3>
             <div id="closeReportsModal1" style="color:red;font-size: 1.2rem;font-weight: bold;cursor: pointer;width: 25px;height: 25px;border-radius: 4px;background-color: #eee;display: flex;justify-content: center;align-items: center;">X</div>
         </div>
         <div class="reportContentHere">
-           <div class="fundmanagerReportContainer" style="padding:5px 6px;">
-               <h3 style="margin-left:5px;">Fund Manager Report</h3>
-                <table style="margin-top:4px;">
-                    <tr>
-                        <th>Content</th>
-                        <th>Qty</th>
-                        <th>Price</th>
-                    </tr>
-                    <tr>
-                        <td>Item A</td>
-                        <td>10</td>
-                        <td>$50</td>
-                    </tr>
-                    <tr>
-                        <td>Item B</td>
-                        <td>5</td>
-                        <td>$30</td>
-                    </tr>
-                    <tr>
-                        <td>Item C</td>
-                        <td>8</td>
-                        <td>$40</td>
-                    </tr>
+            <div class="fundMngFunds" style="padding:4px 17px;">
+                
+            </div>
+           <div class="fundmanagerReportContainer" style="padding:2px 6px;display:none;" >
+                <table style="margin-top:1px;" class="fundManagerReportTable" >
+                    <thead>
+                        <tr>
+                            <th>Content</th>
+                            <th>Qty</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Item A</td>
+                            <td>10</td>
+                            <td>$50</td>
+                        </tr>
+                        <tr>
+                            <td>Item B</td>
+                            <td>5</td>
+                            <td>$30</td>
+                        </tr>
+                        <tr>
+                            <td>Item C</td>
+                            <td>8</td>
+                            <td>$40</td>
+                        </tr>
+                    </tbody>
                 </table>
            </div>
         </div>
