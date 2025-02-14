@@ -499,6 +499,6 @@ tr:last-child td {
 }
 
 .tbody-scroll {
-  max-height: 60vh;
-  overflow-y: auto;
+  max-height: 63vh;
+  overflow-y: scroll;
 }
