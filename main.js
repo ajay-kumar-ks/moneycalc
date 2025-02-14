@@ -436,15 +436,12 @@ $('#SaveData').on('click', function() {
 
 $('.reportsDatas').on('click',function(){
   var reportType = $(this).attr('data-val');
-  console.log('hii1',reportType)
   if(reportType == 'fundManagerReports'){
     loadFundManagerReports();
   }
 });
 function loadFundManagerReports(){
-  console.log('hiii');
   if (localStorage.getItem("savedFundsData")){
-    console.log('hhhhh',JSON.parse(localStorage.getItem("savedFundsData")))
     savedAllItems = JSON.parse(localStorage.getItem("savedFundsData"));
     if(savedAllItems){
       htmlCon = '';
@@ -466,8 +463,47 @@ $('#closeReportsModal1').on('click',function(){
   $('#ReportsModalModal').modal('hide');
 });
 
-$('.fundShowCard').on('click',function(){
+$(document).on('click','.fundShowCard',function(){
     $('.fundMngFunds').css('display','none');
     $('.fundmanagerReportContainer').css('display','');
+    var id = $(this).attr('data-id');
+    if (localStorage.getItem("savedFundsData")){
+      savedAllItems = JSON.parse(localStorage.getItem("savedFundsData"));
+      if(savedAllItems){
+        tr = '';
+        $.each(savedAllItems, function (svIndex, svValue) { 
+            if(svIndex == id){
+              if(svValue.array.length > 0){
+                $.each(svValue.array, function (tbIndx, tbVal) { 
+                   tr += `<tr>
+                            <td>${tbVal.name}</td>
+                            <td>${tbVal.qty}</td>
+                            <td>${tbVal.amount}</td>
+                            <td>${tbVal.totalamt}</td>
+                        </tr>`;
+                });
+              }
+            }
+        });
+        $('.fundManagerReportTable tbody').html(tr);
+      }
+    }
+});
+
+$('.backIcon').on('click',function(){
+  $('.fundMngFunds').css('display','');
+  $('.fundmanagerReportContainer').css('display','none');
+  $('.frontIcon').css('color','');
+});
+$('.frontIcon').on('click',function(){
+  if($('.fundManagerReportTable tbody').html().trim() != '' && $('.fundManagerReportTable tbody').html().trim() != null){
+    $('.fundMngFunds').css('display','none');
+    $('.fundmanagerReportContainer').css('display','');
+  }
+});
+$(document).ready(function () {
+  if($('.fundManagerReportTable tbody').html().trim() == ''){
+    $('.frontIcon').css('color','gray');
+  }
 });
 

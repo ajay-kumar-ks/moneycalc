@@ -486,3 +486,14 @@ tr:last-child td {
 .fundShowCard:hover{
   box-shadow: 1px 2px 10px rgb(125, 125, 125);
 }
+
+.frontIcon:hover{
+  color:#59a4f4;
+  background-color: rgb(228, 226, 226);
+  border-radius: 50%;
+}
+.backIcon:hover{
+  color:#59a4f4;
+  background-color: rgb(228, 226, 226);
+  border-radius: 50%;
+}
