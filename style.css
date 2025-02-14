@@ -497,3 +497,8 @@ tr:last-child td {
   background-color: rgb(228, 226, 226);
   border-radius: 50%;
 }
+
+.tbody-scroll {
+  max-height: 60vh;
+  overflow-y: auto;
+}
