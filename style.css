@@ -500,5 +500,9 @@ tr:last-child td {
 
 .tbody-scroll {
   max-height: 63vh;
-  overflow-y: scroll;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* Momentum scrolling for iOS */
+  touch-action: auto;
+    overscroll-behavior: contain;
 }
+
