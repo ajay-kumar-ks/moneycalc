@@ -488,7 +488,7 @@ $(document).on('click','.fundShowCard',function(){
               }
             }
         });
-        $('.allTotalSum').html('&#x20B9;&nbsp;allTotalSum');
+        $('.totalSumAmountTable').html('&#x20B9;&nbsp;'+allTotalSum);
         $('.fundManagerReportTable tbody').html(tr);
       }
     }
