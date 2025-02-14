@@ -430,6 +430,7 @@ $('#SaveData').on('click', function() {
     AdditionalDatas['totAmt'] = TotAmount;
     saveAllItems.push(AdditionalDatas); // Corrected this line
     localStorage.setItem("savedFundsData", JSON.stringify(saveAllItems));
+    $('#menuModal').modal('hide');
   }
 });
 
@@ -471,6 +472,7 @@ $(document).on('click','.fundShowCard',function(){
       savedAllItems = JSON.parse(localStorage.getItem("savedFundsData"));
       if(savedAllItems){
         tr = '';
+        var allTotalSum = 0;
         $.each(savedAllItems, function (svIndex, svValue) { 
             if(svIndex == id){
               if(svValue.array.length > 0){
@@ -481,10 +483,12 @@ $(document).on('click','.fundShowCard',function(){
                             <td>${tbVal.amount}</td>
                             <td>${tbVal.totalamt}</td>
                         </tr>`;
+                        allTotalSum += Number(tbVal.totalamt);
                 });
               }
             }
         });
+        $('.allTotalSum').html('&#x20B9;&nbsp;allTotalSum');
         $('.fundManagerReportTable tbody').html(tr);
       }
     }
